@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -41,7 +40,7 @@ class _QRViewExampleState extends State<QRViewExample> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Text(
-          "My QR Scanner",
+          "QR Suckaner",
           style: TextStyle(
             color: Colors.white,
           ),
@@ -121,7 +120,6 @@ class _QRViewExampleState extends State<QRViewExample> {
       controller.stopCamera();
       TextEditingController controller0 =
           TextEditingController(text: "${result!.code}");
-      bool _copied = false;
       showDialog(
         context: context,
         builder: (ctx) => AlertDialog(

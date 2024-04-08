@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'QR Suckaner',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -52,38 +52,40 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            'My QR Scanner',
-            style: TextStyle(
-              color: Colors.purple,
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'QR Suckaner',
+              style: TextStyle(
+                color: Color(0xFF9C27B0),
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 58),
-            child: Image.asset(
-              'assets/qr_code_loop.gif',
+            const SizedBox(
+              height: 20,
             ),
-          ),
-          ElevatedButton.icon(
-            onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => const QRViewExample(),
-            )),
-            icon: const Icon(Icons.qr_code_scanner),
-            label: const Text("Scan Code"),
-            style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.purple, foregroundColor: Colors.white),
-          )
-        ],
+            Padding(
+              padding: const EdgeInsets.only(right: 58),
+              child: Image.asset(
+                'assets/qr_code_loop.gif',
+              ),
+            ),
+            ElevatedButton.icon(
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const QRViewExample(),
+              )),
+              icon: const Icon(Icons.qr_code_scanner),
+              label: const Text("Scan Code"),
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.purple, foregroundColor: Colors.white),
+            )
+          ],
+        ),
       ),
     );
   }
